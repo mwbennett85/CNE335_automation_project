@@ -6,13 +6,15 @@
 
 from Server import Server
 def print_program_info():
-    # TODO - Change your name
+
     print("Server Automator v0.1 by Matt Bennett")
 
 # This is the entry point to our program
 if __name__ == '__main__':
     print_program_info()
-    # TODO - Create a Server object
-    pong = Server("52.41.145.87")
-    # TODO - Call Ping method and print the results
+
+    pong = Server('52.41.145.87', 'C:\\Users\\mwben\\mattb_key.ppk')
+
     print(pong.ping())
+
+    pong.update()
