@@ -1,6 +1,6 @@
 import os
 import paramiko
-from io import StringIO
+
 
 class Server:
     """ Server class for representing and manipulating servers. """
@@ -24,6 +24,13 @@ class Server:
         ssh.connect(hostname = f'{self.server_ip}', username = 'ubuntu', key_filename = self.keypath )
 
         stdin, stdout, stderr = ssh.exec_command('lsb_release -a')
+
+        for line in stdout.read().splitlines():
+            print("\b")
+            print(line)
+
+        #https://embeddedinventor.com/sudo-apt-get-update-y-command-explained-for-beginners/
+        stdin, stdout, stderr = ssh.exec_command('sudo apt-get update && sudo apt-get -y upgrade')
 
         for line in stdout.read().splitlines():
             print("\b")
