@@ -7,7 +7,7 @@
 from Server import Server
 def print_program_info():
 
-    print("Server Automator v0.1 by Matt Bennett")
+    print("Server Automator v0.2 by Matt Bennett")
 
 # This is the entry point to our program
 if __name__ == '__main__':
